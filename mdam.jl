@@ -318,7 +318,28 @@ function move_snake_until_marker!(r)
     end
 end
 
+# номер 8 упрощенный
         
+function find_marker!(r)
+    max_steps = 1
+    side = Ost
+    while !ismarker(r)
+        find_marker_along!(r, side, max_steps)
+        side = next_side(side)
+        find_marker_along!(r, side, max_steps)
+        max_num_steps += 1
+        side = next_side(side)
+    end
+end
+function find_marker_along!(r, side, max_steps)
+    num_steps = 0
+    while num_steps < max_steps && !ismarker(r)
+        move!(r, side)
+        num_steps += 1
+    end
+end       
+
+
 # номер 9
         
 function mark_chess!(r)
