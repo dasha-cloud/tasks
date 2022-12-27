@@ -51,7 +51,7 @@ function come_to_back!(r, steps_back) # перемещает робота в и�
     end
 end
 
-# 4
+
 function putmarkers_until_border2!(r, sides) # функция putmarkers_until_border! для направления из 2 сторон
     num_steps = 0
     while !isborder(r, sides[1]) && !isborder(r, sides[2])
@@ -83,19 +83,6 @@ function inverse_side2(sides) # меняет на противопложные 2
 end
 
 
-
-# function moves_if_possible!(r::Robot, side::HorizonSide, n_steps::Int)::Bool
-
-#     while n_steps > 0 && move_if_possible!(r, side)
-#         n_steps -= 1
-#     end
-
-#     if n_steps == 0
-#         return true
-#     end
-
-#     return false
-# end
 
 
 
@@ -331,7 +318,9 @@ function move_snake_until_marker!(r)
     end
 end
 
+        
 # номер 9
+        
 function mark_chess!(r)
     
     steps_back = steps_to_corner!(r)
@@ -464,7 +453,7 @@ function num_horizontal_borders2!(r, side)
                 end
             end
         end
-        if cur_border == 1 && razruv == 1  # для одной перегородки с несколькими разрывовами в одну клетку
+        if cur_border == 1 && razruv == 1  # для одной перегородки с несколькими разрывами в одну клетку
             if isborder(r, Nord) == true
                 cur_border = 1 
                 razruv=0
@@ -476,7 +465,6 @@ function num_horizontal_borders2!(r, side)
     end
     return num_borders
 end
-
 
 
 # номер 15
