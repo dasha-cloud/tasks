@@ -327,7 +327,7 @@ function find_marker!(r)
         find_marker_along!(r, side, max_steps)
         side = next_side(side)
         find_marker_along!(r, side, max_steps)
-        max_num_steps += 1
+        max_steps += 1
         side = next_side(side)
     end
 end
