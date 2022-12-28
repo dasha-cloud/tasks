@@ -591,5 +591,27 @@ function sosed_cell_through_border!(r, side, num_steps = 0)
 end
 
 
+# номер 25
 
+function mark_chess_rec!(r, side, to_mark = true)
+    if to_mark
+        putmarker!(r)
+    end
+
+    if !isborder(r, side)
+        move!(r, side)
+        to_mark = !to_mark
+        mark_chess_rec!(r, side, to_mark)
+    end
+end
+
+#  25а 
+function mark_chess_1!(r::Robot, side::HorizonSide)
+    mark_chess_rec!(r, side)
+end
+
+#  25б
+function mark_chess_2!(r)
+    mark_chess_rec!(r, side, false)
+end
         
