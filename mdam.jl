@@ -643,3 +643,16 @@ function n_fibbonachi_rec(n)::Int
 
     return n_fibbonachi_rec(n-1) + n_fibbonachi_rec(n - 2)
 end
+
+        
+# номер 21
+        
+function dobledist!(r, side)
+    if !isborder(r,side)
+        move!(r,side)
+        doubledist!(r, side)
+    else
+        move!(r,inverse_side(side))
+        move!(r, inverse_side(side))
+    end
+end
