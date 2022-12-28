@@ -656,3 +656,12 @@ function dobledist!(r, side)
         move!(r, inverse_side(side))
     end
 end
+            
+          #структура робота
+            mutable struct CoordRobot
+                r::Robot
+                coord.x::Int
+                coord.y::Int
+            end
+            r = Robot(animate = true)
+            coordRobot = CoordRobot(r,0,0)
