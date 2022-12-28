@@ -615,3 +615,31 @@ function mark_chess_2!(r)
     mark_chess_rec!(r, side, false)
 end
         
+       
+
+# номер 26
+
+# 26а 
+
+function n_fibbonachi(n)::Int
+    if n == 1 || n == 2
+        return 1
+    end
+    a = 1
+    b = 1
+    for i in 3:n
+        c = a + b
+        a, b = b, c
+    end
+    return b
+end
+
+# 26б
+
+function n_fibbonachi_rec(n)::Int
+    if n == 1 || n == 2
+        return 1
+    end
+
+    return n_fibbonachi_rec(n-1) + n_fibbonachi_rec(n - 2)
+end
